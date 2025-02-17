@@ -1,7 +1,8 @@
-import React, { Suspense, useRef } from "react";
+import React, { Suspense, useRef, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import styled from "styled-components";
+import { gsap } from "gsap";
 
 const Model = () => {
   const { scene } = useGLTF("/models/nike.glb");
@@ -22,11 +23,21 @@ const Model = () => {
 };
 
 const ThreeDViewerSection = () => {
+  const titleRef = useRef();
+
+  useEffect(() => {
+    // GSAP animation for the title
+    gsap.fromTo(titleRef.current, 
+      { y: 100, opacity: 0 }, // Start from below the viewport
+      { y: 0, opacity: 1, duration: 1, ease: "power2.out" } // Move to original position
+    );
+  }, []);
+
   return (
     <SectionWrapper>
       {/* Left Section: Heading and Description */}
       <Content>
-        <Title>
+        <Title ref={titleRef}>
           Explore the <i>NIKE</i> Revolution
         </Title>
         <Description>

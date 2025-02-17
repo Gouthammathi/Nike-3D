@@ -1,148 +1,159 @@
 {
-  
+  
   "name": "wedo",
-  
+  
   "version": "0.1.0",
-  
+  
   "private": true,
-  
+  
   "dependencies": {
-  
-    
+  
+    
   "@craco/craco": "^7.1.0",
-  
-    
+  
+    
   "@fontsource/anton": "^5.1.0",
-  
-    
+  
+    
   "@fontsource/source-sans-pro": "^5.1.0",
-  
-    
+  
+    
   "@mediapipe/tasks-vision": "^0.10.20",
-  
-    
+  
+    
   "@react-three/drei": "^9.120.4",
-  
-    
+  
+    
   "@react-three/fiber": "^8.17.10",
-  
-    
+  
+    
   "cra-template": "1.2.0",
-  
-    
+  
+    
+  "gsap": "^3.12.7",
+  
+    
   "lucide-react": "^0.468.0",
-  
-    
+  
+    
   "react": "^18.3.1",
-  
-    
+  
+    
   "react-dom": "^18.3.1",
-  
-    
+  
+    
   "react-router-dom": "^7.0.2",
-  
-    
+  
+    
   "react-scripts": "^5.0.1",
-  
-    
+  
+    
   "react-slick": "^0.30.3",
-  
-    
+  
+    
   "slick-carousel": "^1.8.1",
-  
-    
+  
+    
   "source-map-loader": "^5.0.0",
-  
-    
+  
+    
   "styled-components": "^6.1.13"
-  
+  
   },
-  
+  
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
-    "eject": "react-scripts eject"
+  
+    
+  "start": "craco start",
+  
+    
+  "build": "craco build",
+  
+    
+  "test": "craco test",
+  
+    
+  "eject": "react-scripts eject"
+  
   },
-  
-  
+  
   "eslintConfig": {
-  
-    
+  
+    
   "extends": [
-  
-    
-    
+  
+    
+    
   "react-app",
-  
-    
-    
+  
+    
+    
   "react-app/jest"
-  
-    
+  
+    
   ]
-  
+  
   },
-  
+  
   "browserslist": {
-  
-    
+  
+    
   "production": [
-  
-    
-    
+  
+    
+    
   ">0.2%",
-  
-    
-    
+  
+    
+    
   "not dead",
-  
-    
-    
+  
+    
+    
   "not op_mini all"
-  
-    
+  
+    
   ],
-  
-    
+  
+    
   "development": [
-  
-    
-    
+  
+    
+    
   "last 1 chrome version",
-  
-    
-    
+  
+    
+    
   "last 1 firefox version",
-  
-    
-    
+  
+    
+    
   "last 1 safari version"
-  
-    
+  
+    
   ]
-  
+  
   },
-  
+  
   "devDependencies": {
-  
-    
+  
+    
   "@babel/plugin-proposal-decorators": "^7.25.9",
-  
-    
+  
+    
   "@babel/plugin-proposal-private-property-in-object": "^7.21.0",
-  
-    
+  
+    
   "autoprefixer": "^10.4.20",
-  
-    
+  
+    
   "babel-eslint": "^10.1.0",
-  
-    
+  
+    
   "react-app-rewired": "^2.2.1",
-  
-    
+  
+    
   "tailwindcss": "^3.4.16"
-  
+  
   }
 }

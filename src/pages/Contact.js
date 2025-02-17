@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import video from '../components/images/bg.mp4'; // Import the video file
+import video from '../components/images/bg.mp4'; // Ensure this path is correct
+import chart from '../components/images/chart.png';
+
 const Card = () => {
   return (
     <StyledWrapper>
@@ -22,42 +24,70 @@ const Card = () => {
 };
 
 const App = () => {
+  useEffect(() => {
+    const videoElement = document.querySelector('video');
+    if (videoElement) {
+      videoElement.play().catch(error => {
+        console.error("Error attempting to play the video:", error);
+      });
+    }
+  }, []);
+
   return (
     <PageContainer>
-      <BackgroundVideo autoPlay muted loop>
-        <source src={video} type="video/mp4" />
-        Your browser does not support the video tag.
-      </BackgroundVideo>
-      <CenteredContainer>
-        <Card />
-      </CenteredContainer>
+      <LeftSection>
+        <VideoContainer>
+          <VideoPlayer autoPlay muted loop>
+            <source src={video} type="video/mp4" />
+            Your browser does not support the video tag.
+          </VideoPlayer>
+        </VideoContainer>
+      </LeftSection>
+      <RightSection>
+        <CenteredContainer>
+          <Card />
+        </CenteredContainer>
+      </RightSection>
     </PageContainer>
   );
 };
 
 const PageContainer = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  display: flex;
+  height: 100vh; /* Full height of the viewport */
 `;
 
-const BackgroundVideo = styled.video`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1; /* Ensures video stays behind all content */
-  opacity: 1; /* Ensures the video is visible */
+const LeftSection = styled.div`
+  flex: 1; /* Takes up half of the screen */
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+`;
+
+const VideoContainer = styled.div`
+  width: 100%; /* Full width of the left section */
+  height: 100%; /* Full height of the left section */
+`;
+
+const VideoPlayer = styled.video`
+  width: 100%; /* Full width of the video */
+  height: 100%; /* Full height of the video */
+  object-fit: cover; /* Cover the entire area */
+`;
+
+const RightSection = styled.div`
+  flex: 1; /* Takes up half of the screen */
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  background-image: url(${chart}); /* Set the chart as the background */
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the background image */
 `;
 
 const CenteredContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+  width: 100%;
+  max-width: 500px; /* Limit the width of the card */
   padding: 20px;
   z-index: 1; /* Ensures the content is above the video */
 `;
