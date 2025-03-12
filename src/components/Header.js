@@ -27,14 +27,14 @@ const Header = () => {
         <div className="flex gap-5 absolute left-1/2 transform -translate-x-1/2 md:hidden">
 
           <Link to="/" className="text-black text-sm">Home</Link>
-          <Link to="/about" className="text-black text-sm">About</Link>
+          <Link to="/about" className="text-black text-sm">Store</Link>
           <Link to="/contact" className="text-black text-sm">Contact</Link>
         </div>
 
         {/* Center Navigation Links (Desktop Only) */}
         <div className="hidden md:flex gap-5 absolute left-1/2 transform -translate-x-1/2 mr-10">
           <Link to="/" className="text-black text-sm md:text-base">Home</Link>
-          <Link to="/about" className="text-black text-sm md:text-base">About</Link>
+          <Link to="/about" className="text-black text-sm md:text-base">Store</Link>
           <Link to="/contact" className="text-black text-sm md:text-base">Contact</Link>
         </div>
 
